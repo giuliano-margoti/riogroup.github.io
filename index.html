@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipe | Grupo de Pesquisa</title>
+    <title>Home | Grupo de Pesquisa</title>
     <style>
         body {
             margin: 0; padding: 0;
@@ -17,103 +17,55 @@
             background-color: #ffffff;
             min-height: 100vh;
             border-left: 1px solid #ccc; border-right: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        .header-top { display: flex; justify-content: space-between; align-items: center; padding: 20px; }
-        .logo { height: 70px; }
-        nav { background-color: #1a2a44; border-bottom: 4px solid #f39c12; } 
-        nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
-        nav ul li { flex: 1; border-right: 1px solid #fff; }
-        nav ul li a { display: block; text-align: center; padding: 12px 0; text-decoration: none; color: #fff; }
-        
         main { 
-                    padding: 40px; 
-                    font-family: "Times New Roman", Times, serif; 
-                }
-        
-                .institution-section { 
-                    margin-bottom: 50px; 
-                }
-        
-                .institution-title {
-                    color: #1a2a44;
-                    font-size: 2rem; 
-                    border-bottom: 2px solid #f39c12; 
-                    padding-bottom: 10px;
-                    margin-bottom: 30px;
-                    text-align: left;
-                }
+            padding: 40px; 
+            font-family: "Times New Roman", Times, serif; 
+        }
 
-                .group-title {
-                    margin-left: calc(100% / 6); 
-                    flex-grow: 1;
-                }
-                
-                .group-title h1 {
-                    font-size: 2.2rem;
-                    line-height: 1.2;
-                    margin: 0;
-                    text-align: left; 
-                }
-                .gif-container {
-                    height: 200px; 
-                    overflow: hidden; 
-                    display: inline-block; 
-                    vertical-align: middle;
-                }
-                
-                .jeans-gif {
-                    display: block;
-                    height: 250px; 
-                    width: auto;
-                    clip-path: inset(25px 0 25px 0); 
-                    margin-top: -25px; 
-                }
-        
-                main p {
-                    font-size: 1.25rem; 
-                    text-align: justify; 
-                    line-height: 1.8;    
-                    color: #333;
-                }
+        .welcome-section h2 {
+            font-size: 2rem;
+            color: #1a2a44;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
 
-        
+        main p {
+            font-size: 1.25rem; 
+            text-align: justify; 
+            line-height: 1.8;    
+            color: #333;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
 <div class="page-wrapper">
-    <header>
-        <div class="header-top">
-            <div class="logo-container">
-                    <div class="gif-container">
-                        <img src="img/logos/jeans.gif" alt="logo animado" class="jeans-gif">
-                    </div>
-            </div>
-            <div class="group-title">
-                <h1>Grupo de pesquisas em ocultações estelares e caracterização física de objetos do Sistema Solar</h1>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="team/team.html">Membros</a></li>
-                <li><a href="publicacoes/publicacoes.html">Publicações</a></li>
-                <li><a href="projetos/projetos.html">Projetos</a></li>
-                <li><a href="https://giuliano-margoti.github.io/Observa-es-grupo-do-Rio/index.html">Telescópios</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="welcome-section">
             <h2 style="text-align: center;">Sobre o Grupo</h2>
             <p>
-                Este grupo de pesquisa tem como objetivo principal o estudo de pequenos corpos do Sistema Solar, utilizando a técnica de ocultações estelares como ferramenta fundamental, associada a outras técnicas como astrometria, fotometria, espectroscopia e polarimetria. Por meio da coordenação de campanhas observacionais internacionais e do desenvolvimento de softwares para redução de imagens e modelagem, o grupo busca determinar parâmetros físicos, como dimensões, formas, albedo e a presença de anéis ou atmosferas, em objetos transnetunianos, centauros e troianos, entre outros. Os pesquisadores brasileiros,em colaboração com instituições renomadas, como o Instituto de Astrofísica de Andaluzia (IAA-CSIC) e o Observatório de Paris (LESIA), formam a rede Lucky Star, reconhecida internacionalmente pela descoberta de quatro sistemas de anéis ao redor de pequenos corpos do sistema solar. Além disso, a equipe dedica-se à formação de recursos humanos qualificados e à inserção da ciência brasileira na vanguarda do conhecimento, tendo projetos ligados ao LSST.
+                Este grupo de pesquisa tem como objetivo principal o estudo de pequenos corpos do Sistema Solar, utilizando a técnica de ocultações estelares como ferramenta fundamental, associada a outras técnicas como astrometria, fotometria, espectroscopia e polarimetria. Por meio da coordenação de campanhas observacionais internacionais e do desenvolvimento de softwares para redução de imagens e modelagem, o grupo busca determinar parâmetros físicos, como dimensões, formas, albedo e a presença de anéis ou atmosferas, em objetos transnetunianos, centauros e troianos, entre outros. Os pesquisadores brasileiros, em colaboração com instituições renomadas, como o Instituto de Astrofísica de Andaluzia (IAA-CSIC) e o Observatório de Paris (LESIA), formam a rede Lucky Star, reconhecida internacionalmente pela descoberta de quatro sistemas de anéis ao redor de pequenos corpos do sistema solar. Além disso, a equipe dedica-se à formação de recursos humanos qualificados e à inserção da ciência brasileira na vanguarda do conhecimento, tendo projetos ligados ao LSST.
             </p>
         </section>
     </main>
 </div>
+
+<script>
+    fetch('/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Erro ao carregar o cabeçalho:', error));
+</script>
 
 </body>
 </html>
