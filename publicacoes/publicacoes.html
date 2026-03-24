@@ -25,6 +25,49 @@
         nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
         nav ul li { flex: 1; border-right: 1px solid #fff; }
         nav ul li a { display: block; text-align: center; padding: 12px 0; text-decoration: none; color: #fff; }
+        
+
+        nav ul li {
+            position: relative;
+        }
+
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%; 
+            left: 0;
+            background-color: #1a2a44;
+            min-width: 200px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #f39c12;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        }
+
+
+        nav ul li:hover .submenu {
+            display: block;
+        }
+
+
+        .submenu li {
+            border-right: none; 
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .submenu li a {
+            text-align: left;
+            padding: 15px 20px;
+            font-size: 1rem;
+        }
+
+        .submenu li a:hover {
+            background-color: #2c3e50;
+            color: #f39c12;
+        }        
 
         main { 
                     padding: 40px; 
@@ -36,20 +79,129 @@
                 }
         
                 .institution-title {
-                    color: #1a2a44; 
+                    color: #1a2a44;
                     font-size: 2rem; 
                     border-bottom: 2px solid #f39c12; 
                     padding-bottom: 10px;
                     margin-bottom: 30px;
                     text-align: left;
                 }
-        
-                main p {
-                    font-size: 1.25rem; 
-                    text-align: justify; 
-                    line-height: 1.8;   
-                    color: #333;
+
+                .group-title {
+                    margin-left: calc(100% / 6); 
+                    flex-grow: 1;
                 }
+                
+                .group-title h1 {
+                    font-size: 2.2rem;
+                    line-height: 1.2;
+                    margin: 0;
+                    text-align: left; 
+                }
+                .gif-container {
+                    height: 200px; 
+                    overflow: hidden; 
+                    display: inline-block; 
+                    vertical-align: middle;
+                }
+                
+                .jeans-gif {
+                    display: block;
+                    height: 250px; 
+                    width: auto;
+                    clip-path: inset(25px 0 25px 0); 
+                    margin-top: -25px; 
+                }
+
+              .pub-list {
+                  list-style: none;
+                  padding: 0;
+              }
+
+              .pub-item {
+                  margin-bottom: 25px;
+                  padding-left: 15px;
+                  border-left: 3px solid #f39c12; 
+              }
+
+              .pub-title {
+                  font-weight: bold;
+                  font-size: 1.2rem;
+                  display: block;
+                  color: #1a2a44;
+                  margin-bottom: 5px;
+              }
+
+              .pub-journal {
+                  font-style: italic;
+                  color: #555;
+              }
+
+              .pub-doi {
+                  display: block;
+                  margin-top: 5px;
+                  font-size: 0.95rem;
+                  font-family: monospace;
+              }
+
+              .pub-author {
+                  display: block;
+                  font-size: 1.1rem;
+                  color: #444;
+                  margin-bottom: 3px;
+              }
+
+              .pub-author b {
+                  color: #1a2a44;
+              }
+
+            .thesis-item {
+                  margin-bottom: 25px;
+                  padding-left: 15px;
+                  border-left: 3px solid #f39c12; 
+            }
+
+            .thesis-title {
+                font-weight: bold;
+                font-size: 1.2rem;
+                color: #1a2a44;
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            .thesis-meta {
+                display: block;
+                font-size: 1.05rem;
+                color: #333;
+                margin-bottom: 5px;
+            }
+
+            .thesis-advisors {
+                display: block;
+                font-size: 0.95rem;
+                font-style: italic;
+                color: #666;
+            }
+
+            .thesis-link {
+                display: inline-block;
+                margin-top: 10px;
+                color: #f39c12;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .thesis-link:hover {
+                text-decoration: underline;
+            }
+            
+             main p {
+                  font-size: 1.25rem; 
+                  text-align: justify; 
+                  line-height: 1.8;    
+                  color: #333;
+              }
+
         
     </style>
 </head>
@@ -59,26 +211,181 @@
     <header>
         <div class="header-top">
             <div class="logo-container">
-                <img src="../img/logos/logos02.png" alt="logo" class="logo" style="height: 150px; width: auto;">
+                    <div class="gif-container">
+                        <img src="../img/logos/jeans.gif" alt="logo animado" class="jeans-gif">
+                    </div>
             </div>
             <div class="group-title">
-                <h1>Pesquisas em Ocultações estelares e caracterização física de objetos do Sistema Solar</h1>
+                <h1>Grupo de pesquisas em ocultações estelares e caracterização física de objetos do Sistema Solar</h1>
             </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../team/team.html">Membros</a></li>
-                <li><a href="publicacoes.html">Publicações</a></li>
-                <li><a href="../projetos/projetos.html">Projetos</a></li>
-                <li><a href="https://giuliano-margoti.github.io/Observa-es-grupo-do-Rio/index.html">Telescópios</a></li>
-            </ul>
-        </nav>
+        
+       <nav>
+          <ul>
+              <li><a href="../index.html">Home</a></li>
+              
+              <li class="has-submenu">
+                  <a href="../team/team.html">Membros ▾</a>
+                  <ul class="submenu">
+                      <li><a href="../team/team.html#membros-internos">Membros Internos</a></li>
+                      <li><a href="../team/team.html#colaboradores">Colaboradores</a></li>
+                  </ul>
+              </li>
+
+              <li class="has-submenu">
+                  <a href="publicacoes.html">Publicações ▾</a>
+                  <ul class="submenu">
+                      <li><a href="publicacoes.html#Artigos">Artigos</a></li>
+                      <li><a href="publicacoes.html#Teses">Teses</a></li>
+                      <li><a href="publicacoes.html#Dissertações">Dissertações</a></li>
+                      <li><a href="publicacoes.html#Artido-dos-colaboradores">Artigos dos colaboradotes</a></li>
+                  </ul>
+              </li>
+              
+              <li class="has-submenu">
+                  <a href="../projetos/projetos.html">Projetos ▾</a>
+                  <ul class="submenu">
+                      <li><a href="../projetos/projetos.html#Campanhas">Campanhas de observações do grupo</a></li>
+                      <li><a href="../projetos/projetos.html#Observacoes">Observações do grupo</a></li>
+                  </ul>
+              </li>
+              
+              <li class="has-submenu">
+                  <a href="projetos.html">Colaborações ▾</a>
+                  <ul class="submenu">
+                      <li><a href="https://giuliano-margoti.github.io/Observa-es-grupo-do-Rio/index.html">Telescópios</a></li>
+                      <li><a href="https://solarsystem.linea.org.br/">Solar System Portal</a></li>
+                      <li><a href="https://lesia.obspm.fr/lucky-star/index.php">Lucky Star</a></li>
+                      <li><a href="https://opop.obspm.fr/">Occultation Portal</a></li>
+                  </ul>
+              </li>
+              
+          </ul>
+      </nav>
+      
     </header>
 
     <main>
         <h2 style="text-align: center;">Publicações</h2>
-        <h2>2026</h2>
+        
+
+        <div id="Artigos">
+            <h2 class="institution-title">Artigos</h2>
+            
+            <h2 style="color: #1a2a44; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 30px;">2026</h2>
+            
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <span class="pub-title">Evidence of a New Arc or a Belt of Small Satellites around (50000) Quaoar</span>
+                    <span class="pub-author"><b>Felipe Braga-Ribas</b>; Chrystian L. Pereira, Bruno Sicardy, Bruno E. Morgado, Jose-Luis Ortiz, Gustavo Madeira, and Giuliano Margoti.</span>
+                    <span class="pub-journal">The Astrophysical Journal Letters</span>
+                    <a href="https://iopscience.iop.org/article/10.3847/2041-8213/ae4751/meta" target="_blank" class="pub-doi lattes-link">
+                        DOI: 10.3847/2041-8213/ae4751
+                    </a>
+                </li>
+
+                <li class="pub-item">
+                    <span class="pub-title">The rings of (2060) Chiron: Evidence of an evolving system</span>
+                    <span class="pub-author"><b>C. L. Pereira</b>; F. Braga-Ribas, B. Sicardy, R. Leiva, M. Assafin, et al.</span>
+                    <span class="pub-journal">The Astrophysical Journal Letters</span>
+                    <a href="https://iopscience.iop.org/article/10.3847/2041-8213/ae0b6d/metaDOI 10.3847/2041-8213/ae0b6d" target="_blank" class="pub-doi lattes-link">
+                        DOI: 10.3847/2041-8213/ae0b6d
+                    </a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </div>
+
+
+        <div id="Teses">
+            <h2 class="institution-title">Teses</h2>
+
+            <div class="thesis-item">
+                <span class="thesis-title">Rings Diversity Around Small Solar System Bodies: Discoveries and Detection Limits</span>
+                
+                <span class="thesis-meta">
+                    <b>Autor:</b> Chrystian Luciano Pereira <br>
+                    <b>Instituição:</b> Observatório Nacional (ON)<br>
+                    <b>Data da defesa:</b> 27 de agosto de 2024
+                </span>
+
+                <span class="thesis-advisors">
+                    Orientador: Dr. Felipe Braga Ribas <br>
+                </span>
+
+                <a href="http://sistede.on.br:8080/jspui/handle/tede/191" target="_blank" class="thesis-link">➜ Biblioteca</a>
+            </div>
+
+
+
+
+        </div>
+
+      <div id="Dissertações">
+          <h2 class="institution-title">Dissertações</h2>
+
+            <div class="thesis-item">
+                <span class="thesis-title">Obtenção dos Parâmetros Rotacionais e Escala de Troianos de Júpiter Através de Curvas de Rotação e Ocultações</span>
+                
+                <span class="thesis-meta">
+                    <b>Autor:</b> Eros de Oliveira Gradovski <br>
+                    <b>Instituição:</b> Universidade Tecnológica Federal do Paraná (UTFPR)<br>
+                    <b>Data da defesa:</b> 25 de março de 2025
+                </span>
+
+                <span class="thesis-advisors">
+                    Orientador: Dr. Felipe Braga Ribas <br>
+                </span>
+
+                <a href="https://repositorio.utfpr.edu.br/jspui/handle/1/37456" target="_blank" class="thesis-link">➜ Biblioteca</a>
+            </div>
+
+            <div class="thesis-item">
+                <span class="thesis-title">Determinação da Forma Tridimensional de (50000) Quaoar por Ocultações Estelares Utilizando Algoritmo Genético para Minimização</span>
+                
+                <span class="thesis-meta">
+                    <b>Autor:</b> Giuliano Margoti <br>
+                    <b>Instituição:</b> Universidade Tecnológica Federal do Paraná (UTFPR)<br>
+                    <b>Data da defesa:</b> 05 de setembro de 2024
+                </span>
+
+                <span class="thesis-advisors">
+                    Orientador: Dr. Felipe Braga Ribas <br>
+                </span>
+
+                <a href="https://repositorio.utfpr.edu.br/jspui/handle/1/35286" target="_blank" class="thesis-link">➜ Biblioteca</a>
+            </div>
+
+
+        </div>
+            
+
+      <div id="Artido-dos-colaboradores">
+          <h2 class="institution-title">Colaboradores</h2>
+          
+            <h2 style="color: #1a2a44; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 30px;">2026</h2>
+            
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <span class="pub-title">Constraining the size, shape, and albedo of the large trans-Neptunian object (28978) Ixion with multi-chord stellar occultations</span>
+                    <span class="pub-author"><b>Y. Kilic</b>; F. Braga-Ribas, C. L. Pereira, J. L. Ortiz, B. Sicardy, et al.</span>
+                    <span class="pub-journal">Astronomy & Astrophysics</span>
+                    <a href="https://www.aanda.org/articles/aa/abs/2026/03/aa57970-25/aa57970-25.html" target="_blank" class="pub-doi lattes-link">
+                        DOI: 10.1051/0004-6361/202557970 
+                    </a>
+                </li>
+                
+                
+                
+                
+            </ul>
+
+        </div>
+        
+        
     </main>
 </div>
 

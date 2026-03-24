@@ -25,6 +25,49 @@
         nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
         nav ul li { flex: 1; border-right: 1px solid #fff; }
         nav ul li a { display: block; text-align: center; padding: 12px 0; text-decoration: none; color: #fff; }
+
+
+        nav ul li {
+            position: relative; 
+        }
+
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%; 
+            left: 0;
+            background-color: #1a2a44;
+            min-width: 200px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #f39c12;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        }
+
+
+        nav ul li:hover .submenu {
+            display: block;
+        }
+
+
+        .submenu li {
+            border-right: none; 
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .submenu li a {
+            text-align: left;
+            padding: 15px 20px;
+            font-size: 1rem;
+        }
+
+        .submenu li a:hover {
+            background-color: #2c3e50;
+            color: #f39c12;
+        }
         
         main { 
                     padding: 40px; 
@@ -94,15 +137,48 @@
                 <h1>Grupo de pesquisas em ocultações estelares e caracterização física de objetos do Sistema Solar</h1>
             </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="team/team.html">Membros</a></li>
-                <li><a href="publicacoes/publicacoes.html">Publicações</a></li>
-                <li><a href="projetos/projetos.html">Projetos</a></li>
-                <li><a href="https://giuliano-margoti.github.io/Observa-es-grupo-do-Rio/index.html">Telescópios</a></li>
-            </ul>
-        </nav>
+       <nav>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              
+              <li class="has-submenu">
+                  <a href="team/team.html">Membros ▾</a>
+                  <ul class="submenu">
+                      <li><a href="team/team.html#membros-internos">Membros Internos</a></li>
+                      <li><a href="team/team.html#colaboradores">Colaboradores</a></li>
+                  </ul>
+              </li>
+
+              <li class="has-submenu">
+                  <a href="publicacoes/publicacoes.html">Publicações ▾</a>
+                  <ul class="submenu">
+                      <li><a href="publicacoes/publicacoes.html#Artigos">Artigos</a></li>
+                      <li><a href="publicacoes/publicacoes.html#Teses">Teses</a></li>
+                      <li><a href="publicacoes/publicacoes.html#Dissertações">Dissertações</a></li>
+                      <li><a href="publicacoes/publicacoes.html#Artido-dos-colaboradores">Artigos dos colaboradotes</a></li>
+                  </ul>
+              </li>
+              
+              <li class="has-submenu">
+                  <a href="projetos/projetos.html">Projetos ▾</a>
+                  <ul class="submenu">
+                      <li><a href="projetos/projetos.html#Campanhas">Campanhas de observações do grupo</a></li>
+                      <li><a href="projetos/projetos.html#Observacoes">Observações do grupo</a></li>
+                  </ul>
+              </li>
+              
+              <li class="has-submenu">
+                  <a href="projetos/projetos.html">Colaborações ▾</a>
+                  <ul class="submenu">
+                      <li><a href="https://giuliano-margoti.github.io/Observa-es-grupo-do-Rio/index.html">Telescópios</a></li>
+                      <li><a href="https://solarsystem.linea.org.br/">Solar System Portal</a></li>
+                      <li><a href="https://lesia.obspm.fr/lucky-star/index.php">Lucky Star</a></li>
+                      <li><a href="https://opop.obspm.fr/">Occultation Portal</a></li>
+                  </ul>
+              </li>
+              
+          </ul>
+      </nav>
     </header>
 
     <main>
